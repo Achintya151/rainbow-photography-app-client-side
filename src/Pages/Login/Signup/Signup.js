@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 const Signup = () => {
+
+    const { createUser, updateUserProfile } = useContext(AuthContext);
 
     const handleSignup = e => {
         e.preventDefault();
@@ -10,6 +13,25 @@ const Signup = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                form.reset();
+                handleUpdateUser(name, photoURL)
+                console.log(user);
+            })
+            .catch(e => console.error(e))
+    }
+
+    const handleUpdateUser = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(e => console.error(e))
     }
 
     return (
