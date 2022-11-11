@@ -29,7 +29,12 @@ const Services = () => {
                 }
             </div>
             <br />
-            <button className='btn btn-primary w-1/3' onClick={() => setSize(count)}><Link to='/services'>see all</Link></button>
+            {
+                size === 3 ?
+                    <button className='btn btn-primary w-1/3' onClick={() => setSize(count)}><Link to='/services'>see all</Link></button>
+                    :
+                    <></>
+            }
         </div>
     );
 };

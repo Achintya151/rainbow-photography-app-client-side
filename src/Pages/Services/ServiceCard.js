@@ -8,7 +8,14 @@ const ServiceCard = ({ service }) => {
             <figure><img className='h-full w-40' src={img} alt="Movie" /></figure>
             <div className="card-body">
                 <h2 className="card-title capitalize">{title}</h2>
-                <p>{description}</p>
+                <p>{
+                    description.length > 100 ?
+                        <>
+                            {description.slice(0, 100) + '...'}
+                        </>
+                        :
+                        description
+                }</p>
                 <p><strong>Price: ${charge}</strong></p>
                 <div className="card-actions justify-end">
                     <Link to={`/service/${_id}`}>
