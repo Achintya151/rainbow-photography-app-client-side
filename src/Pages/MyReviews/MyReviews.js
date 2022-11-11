@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import Review from '../Reviews/Review';
+import { Helmet } from 'react-helmet'
 
 
 const MyReviews = () => {
@@ -33,6 +34,10 @@ const MyReviews = () => {
     }, [user?.email])
     return (
         <div>
+            <Helmet>
+                <title>My reviews</title>
+                <meta name="description" content="Nested component" />
+            </Helmet>
             {myReviews.length === 0 ?
                 <h2 className='text-4xl text-center my-10 font-bold'>No were review added</h2>
                 :

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const AddService = () => {
 
@@ -39,6 +40,10 @@ const AddService = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Add Service</title>
+                <meta name="description" content="Nested component" />
+            </Helmet>
             <h2 className='text-5xl text-center font-bold mb-8'>Add services</h2>
             <form onSubmit={handleAddService}>
                 <div className='flex flex-col items-center gap-4 mb-10 form-control'>

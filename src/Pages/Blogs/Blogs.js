@@ -1,8 +1,13 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const Blogs = () => {
     return (
         <div>
+            <Helmet>
+                <title>Blogs</title>
+                <meta name="description" content="Nested component" />
+            </Helmet>
             <h1 className='text-5xl text-center font-bold'>Blogs</h1>
             <br />
             <hr />

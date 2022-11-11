@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
@@ -36,6 +37,10 @@ const Signup = () => {
 
     return (
         <div className="hero min-h-screen min-w-full bg-base-200 ">
+            <Helmet>
+                <title>Sign In</title>
+                <meta name="description" content="Nested component" />
+            </Helmet>
             <div className="hero-content flex-col">
                 <div className="text-center lg:text-left py-5">
                     <h1 className="text-5xl font-bold">Signup now!</h1>

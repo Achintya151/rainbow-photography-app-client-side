@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import AllReviews from '../Reviews/AllReviews';
@@ -9,6 +10,10 @@ const ServiceDetails = () => {
     const { _id, title, img, description } = useLoaderData();
     return (
         <div>
+            <Helmet>
+                <title>{title}</title>
+                <meta name="description" content="Nested component" />
+            </Helmet>
             <h2 className='text-5xl font-bold capitalize text-center'>{title}</h2>
             <div className='flex justify-between items-center my-10'>
                 <img src={img} alt="" className='h-screen pr-5' />
