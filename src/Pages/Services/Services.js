@@ -9,7 +9,7 @@ const Services = () => {
     console.log(count, services);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services?size=${size}`)
+        fetch(`https://service-review-server-side-topaz.vercel.app/services?size=${size}`)
             .then(res => res.json())
             .then(data => {
                 setCount(data.count);

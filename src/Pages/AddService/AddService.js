@@ -20,7 +20,7 @@ const AddService = () => {
             description
         }
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://service-review-server-side-topaz.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

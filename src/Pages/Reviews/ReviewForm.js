@@ -25,7 +25,7 @@ const ReviewForm = ({ serviceId, title }) => {
         }
         console.log(submittedReview);
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://service-review-server-side-topaz.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

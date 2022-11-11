@@ -7,7 +7,7 @@ const AllReviews = ({ serviceId }) => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/reviewsbyserviceid?serviceId=${serviceId}`)
+        fetch(`https://service-review-server-side-topaz.vercel.app/reviewsbyserviceid?serviceId=${serviceId}`)
             .then(res => res.json())
             .then(data => {
                 setReviews(data);

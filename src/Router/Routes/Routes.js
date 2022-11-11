@@ -6,6 +6,7 @@ import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import Signup from "../../Pages/Login/Signup/Signup";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
+import UpdateReview from "../../Pages/Reviews/UpdateReview";
 import ServiceDetails from "../../Pages/Services/ServiceDetails";
 import Services from "../../Pages/Services/Services";
 import PrivateRoute from "../PrivateRoutes/PrivateRoute";
@@ -53,7 +54,11 @@ const router = createBrowserRouter([
             {
                 path: '/service/:id',
                 element: <ServiceDetails></ServiceDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://service-review-server-side-topaz.vercel.app/services/${params.id}`)
+            },
+            {
+                path: '/updatereview/:id:',
+                element: <UpdateReview></UpdateReview>
             }
         ]
     }
